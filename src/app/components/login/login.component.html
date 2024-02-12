@@ -1,0 +1,49 @@
+    
+<div class="login-outer-cnt">
+    <div class="login-outer-sub-cnt">
+    <div class="login-main-cnt">
+        <div class="title-text-cnt">
+            <div><span class="title-text" style="color: #FBBC04;">Fundoo</span></div>
+            <div class="sub-title-text"><span>Sign in</span></div>
+            <div class="sub-text">
+                <span>Use your Fundoo Account</span>
+            </div>
+        </div>
+        <form [formGroup]="loginForm" class="login-input-cnt">
+            <div class="login-input">
+                <mat-form-field appearance="outline" style = "margin-left: 15px;">
+                    <mat-label>Email or phone</mat-label>
+                    <input matInput placeholder="Email or phone" formControlName="userName">
+                    <mat-error *ngIf="f['userName']?.errors?.['required']">Email is required</mat-error>
+                    <mat-error *ngIf="f['userName']?.errors?.['email']">Incorrect Email Format</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="login-input">
+                <mat-form-field appearance="outline" style = "margin-left: 15px;">
+                    <mat-label>Password</mat-label>
+                    <input [type]="passType == 'hide' ? 'password' : 'text'" matInput placeholder="Enter password" formControlName="password">
+                    <!-- <mat-icon *ngIf="passType == 'hide'" (click)="togglePasswordVisibility('show')" matSuffix svgIcon="show-password-icon" aria-hidden="false" aria-label="show password icon"></mat-icon> -->
+                    <!-- <mat-icon *ngIf="passType == 'show'" (click)="togglePasswordVisibility('hide')" matSuffix svgIcon="hide-password-icon" aria-hidden="false" aria-label="hide password icon"></mat-icon> -->
+                    <mat-error *ngIf="f['password']?.errors?.['required']">Password is required</mat-error>
+                    <mat-error *ngIf="f['password']?.errors?.['minlength']">Minimum 6 characters</mat-error>
+                </mat-form-field>
+                <button class="forgot-pass-btn" mat-button color="primary"style = "font-weight: 600">Forgot password</button>
+            </div>
+        </form>
+        <div class="login-btn-cnt">
+            <button mat-button color="primary" routerLink="/signup" style = "font-weight: 600;">Create account</button>
+            <button mat-raised-button color="primary" (click)="handleLogin()"style="font-weight:600">Login</button>
+        </div>
+</div>
+<footer style = "display: flex;gap:80px;margin-top: 10px;">
+    <select id = "language">
+        <option value = "English(Us)">English(United States)</option>
+        <option value = "English(India)">English(India)</option>
+        <option value = "Hindi">Hindi</option>
+    </select>
+    <div id = "footer_div" style = "display: flex;gap:22px">
+       <span>Help</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+    </div>
+</footer>

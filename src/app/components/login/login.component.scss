@@ -1,0 +1,82 @@
+::ng-deep .app-login-cnt{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.login-outer-cnt {
+    display: flex;
+    width: 100%;
+    height: 100%;   
+    margin-top: 180px; 
+}
+.login-outer-sub-cnt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.login-main-cnt {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: auto;
+    border: #A9ACAA 1px solid;
+    border-radius: 8px;
+    padding: 40px 35px;
+    padding-right: 50px;
+}
+.login-pass-cnt {
+    display: flex;
+    flex-direction: column;
+}
+.title-text-cnt {
+    display: flex;
+    height: 30%;
+    flex-direction: column;
+    align-items: center;
+}
+.title-text{
+    font-size: 24px;
+    font-weight: 500;
+    color: #FBBC04;
+}
+.sub-title-text{
+    height: 32px;
+    font-size: 24px;
+    font-weight: 400;
+    padding-top: 16px;
+}
+.sub-text {
+    height: 24px;
+    font-size: 19px;
+    font-weight: 400;
+    padding-top: 7px;
+}
+.forgot-pass-btn {
+    width: fit-content;
+}
+.login-btn-cnt {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.login-input-cnt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.login-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+  

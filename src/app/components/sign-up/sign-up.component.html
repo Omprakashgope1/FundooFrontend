@@ -1,0 +1,55 @@
+    <div id = "Main">
+    <form [formGroup] = "signUpForm" id="boxMain1">
+        <span id = "Fundoo" style="margin-top: 45px;font-weight: 550;">Fundoo</span>
+        <span id = "create_fundoo" style = "margin: 15px 0px 20px 0px;">Create your Fundoo Account</span>
+        <div class= "box2">
+            <mat-form-field appearance="outline" style = "margin-right: 10px;">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" formControlName="firstName">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" formControlName="lastName">
+              </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" style = "margin-bottom: 18px;">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" formControlName="userName">
+            <mat-hint style="color:black;">you can use letter,numbers and symbols</mat-hint>
+          </mat-form-field>
+        <div class = "box2">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName="password">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Confirm</mat-label>
+                <input matInput placeholder="Confirm" formControlName = "confirm">
+              </mat-form-field>
+        </div> 
+        <div id = "box3">
+            <button mat-button color="primary" id = "sign_in" routerLink="/login" style = "font-weight: 600;">Sign in instead</button>
+            <button mat-flat-button color="primary" (click) = "handleSignUp()"style = "font-weight: 600;">Register</button>
+        </div>
+    </form>
+    <div id = "boxMain2">
+        <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWhCs4f2YW-VqYSm1zPkcdznlX95UOuiO8tw&usqp=CAU" style="width: 300px; height: 300px;" alt="Google Image">
+        <span id = "below_img">
+            One account.All of Fundoo<br>
+                 working for you.
+        </span>
+    </div> 
+    </div>
+    <footer>
+        <select id = "language">
+            <option value = "English(Us)">English(United States)</option>
+            <option value = "English(India)">English(India)</option>
+            <option value = "Hindi">Hindi</option>
+        </select>
+        <div id = "footer_div">
+           <span>Help</span>
+            <span>Privacy</span>
+            <span>Terms</span>
+        </div>
+    </footer> 
+

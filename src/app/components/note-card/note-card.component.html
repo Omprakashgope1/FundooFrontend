@@ -1,0 +1,55 @@
+<div class="main-cnt" [style.background-color] = 'note.color' #mainBox>
+    <div id = 'title-cnt' (click) = "openDialog()">
+    <span style = "font-weight: 550;">{{note.title}}</span>
+    <span style="display: block; max-width: 100%; word-wrap: break-word;">{{note.description}}</span>
+    </div>
+    <div id = 'icon-cnt' *ngIf = "comingFrom != 'trashIt' else goTrash">
+    <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+    <mat-icon svgIcon="collabrator-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+    <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+    <mat-icon svgIcon="color-icon" aria-hidden="false" aria-label="Note SVG icon" [matMenuTriggerFor]="menu1"></mat-icon>
+    <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="Note SVG icon" (click) = "handleFun('Archive')" 
+    *ngIf ="comingFrom == 'note' else forUnarchive"></mat-icon>
+    <div>
+        <ng-template #forUnarchive>
+            <mat-icon svgIcon = "unarchive-icon" (click) = "handleFun('Archive')"></mat-icon>
+        </ng-template>
+    </div>
+    <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="Note SVG icon"[matMenuTriggerFor]="menu"></mat-icon>
+    </div>
+    <ng-template #goTrash>
+    <div >
+        <mat-icon svgIcon = 'delete-forever-icon' (click) = "handleFun1('delete')"></mat-icon>
+        <mat-icon svgIcon = 'restore-icon' (click) = "handleFun('trash')"></mat-icon>
+    </div>
+    </ng-template>
+    <div >
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item (click) = "handleFun('trash')">     Delete note      </button>
+        <button mat-menu-item>     Change Label    </button>
+        <button mat-menu-item>     Add drawing   </button>
+        <button mat-menu-item>     Make a copy   </button>
+        <button mat-menu-item>     Show tick boxes  </button>
+        <button mat-menu-item>     Version history   </button>
+        </mat-menu>
+    </div>
+    <div >
+        
+        <mat-menu #menu1 ="matMenu" style = "display: flex;width: 200px;gap:5px ;padding-left: 10px;justify-content: space-around;align-items: center;flex-wrap: wrap;">
+            <div class = "matMenuContent" style="display: flex;flex-wrap: wrap;width:200px">
+                <div style = "background-color:rgb(244, 108, 108) ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('rgb(244, 108, 108)')" ></div>
+                <div style = "background-color:lightblue ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('lightblue')"></div>
+                <div style = "background-color:rgb(240, 212, 212);width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('rgb(240, 212, 212)')"></div>
+                <div style = "background-color:rgb(233, 117, 117) ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('rgb(233, 117, 117)')"></div>
+                <div style = "background-color:plum ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('plum')"></div>
+                <div style = "background-color:powderblue ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('powderblue')"></div>
+                <div style = "background-color:salmon ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('salmon')"></div>
+                <div style = "background-color:sandybrown ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('sandybrown')"></div>
+                <div style = "background-color:rgb(233, 103, 103) ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('rgb(233, 103, 103)')"></div>
+                <div style = "background-color:grey;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('grey')"></div>
+                <div style = "background-color:rgb(234, 220, 220) ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('rgb(234, 220, 220)')"></div>
+                <div style = "background-color:rgb(130, 190, 171) ;width : 30px;height: 30px;border-radius: 50%;"(click) = "handleFun1('rgb(130, 190, 171)')"></div>  
+            </div>
+        </mat-menu>
+    </div>
+</div>

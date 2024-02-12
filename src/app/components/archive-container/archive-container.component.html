@@ -1,0 +1,5 @@
+<div style = "display: flex; margin-top: 20px;gap:20px;flex-wrap:wrap ">
+    <div *ngFor = 'let note of archieveList'>
+        <app-note-card [note] = 'note' [comingFrom] = "'archive'" (handleEvent) = 'handleChild($event)'></app-note-card>
+    </div>
+    </div>

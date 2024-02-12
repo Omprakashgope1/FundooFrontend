@@ -1,0 +1,7 @@
+
+<app-note-search-bar (handleRequest) = 'addNotesDirectly($event)'></app-note-search-bar>
+<div style = "display: flex; margin-top: 20px;gap:20px;flex-wrap:wrap;background-color: white;">
+<div *ngFor = 'let note of noteList'>
+    <app-note-card [note] = 'note' (handleEvent) = 'handleFromChild($event)' [comingFrom] = "'note'"></app-note-card>
+</div>
+</div>

@@ -1,0 +1,28 @@
+.main-cnt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    padding-bottom: 5px;
+    margin: 20px;
+    width: 250px;
+    
+}
+#title-cnt{
+    display: flex;
+    flex-direction: column;
+    gap : 10px;
+    margin-bottom:40px ;
+    max-width: 280px;  
+}
+#icon-cnt{
+    display : flex;
+    justify-content: space-around;
+}
+.matMenuContent{
+    display: flex;
+    width: 500px;
+    gap : 3px;
+}

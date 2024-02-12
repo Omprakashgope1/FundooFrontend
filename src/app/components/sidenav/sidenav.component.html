@@ -1,0 +1,39 @@
+  
+  <mat-drawer-container class="example-container" >
+    <mat-drawer [opened] = 'sideNavState' #drawer class="example-sidenav" mode="side" id = 'main-drawer'>
+        <div id = 'box'>
+        <div class = "note"(click) = 'handleRoute("/notes")'>
+        <mat-icon svgIcon="note-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <label>Notes</label>
+        </div>
+        <div class = "note">
+        <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <label>Reminders</label>
+        </div>
+        <div class = "note">
+        <mat-icon svgIcon="edit-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <label>Edit labels</label>
+        </div>
+        <div class = "note" (click) = 'handleRoute("/archive")'>
+        <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <label>Archieve</label>
+        </div>
+        <div class = "note" (click) = 'handleRoute("/trash")'>
+        <mat-icon svgIcon="trash-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <label>Bin</label>
+        </div>
+        </div>
+    </mat-drawer>
+    <div class="lower-cnt">
+        <div class="lower-icon-cnt" *ngIf = "!sideNavState">
+        <mat-icon svgIcon="note-icon" aria-hidden="false" aria-label="Note SVG icon" (click) = 'handleRoute("/notes")'></mat-icon>
+        <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon="edit-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="Note SVG icon"(click) = 'handleRoute("/archive")'></mat-icon>
+        <mat-icon svgIcon="trash-icon" aria-hidden="false" aria-label="Note SVG icon"(click) = 'handleRoute("/trash")'></mat-icon>
+        </div>
+        <div id="rounter-cnt">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+  </mat-drawer-container>

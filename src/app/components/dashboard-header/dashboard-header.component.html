@@ -1,0 +1,30 @@
+
+<mat-toolbar id = "header">
+    <div id =  "first">
+    <button style="margin-top: 5px;" (click) = 'toggleNavBar()'
+    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon svgIcon="menu" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+    </button>   
+    <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="">
+    <span style="margin-top:8px;font-size: 30px;">Fundoo</span>
+    </div>
+    <div style = "border:solid black 2px;background-color: white;margin-left: 10px;display: flex;align-items: center;padding-left: 10px;border-radius: 8px;">
+        <mat-icon svgIcon="search-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <input type="search" placeholder="search" id = "search-bar">
+    </div>
+      <div id = "last" style="display: flex;justify-content: space-evenly;width : 250px">
+      <mat-icon svgIcon="refresh" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+      <mat-icon svgIcon="list-view" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+      <!-- <mat-icon svgIcon="menu" aria-hidden="false" aria-label="Note SVG icon"></mat-icon> -->
+      <mat-icon svgIcon="setting-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+      <div id = "omi" [matMenuTriggerFor]="menu">O</div>
+      <div >
+        <mat-menu #menu="matMenu" >
+        <div style = "font-size:20px;border-radius: 50%;text-align:center;background-color: blueviolet;width: 40px;height: 40px;padding-top:15px;margin-left: 35px;">O</div>
+        <span> Om Prakash Gope </span>
+        <button mat-menu-item style = "font-size: 20px;font-weight:550;"(click) = "logoutFun()">  logout </button>
+        </mat-menu>
+    </div>
+      </div>
+  </mat-toolbar>
+  

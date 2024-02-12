@@ -1,0 +1,32 @@
+<div style="margin-left: 250px;">
+<div *ngIf="showMsg else hideMsg" class = "first-cnt"(click) = "openCloseCall()" >
+    <span >Take a note...</span>
+    <div  id = "img-cnt">
+        <mat-icon svgIcon="tick-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon = 'brush-icon' aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+    </div>
+</div>
+<ng-template #hideMsg >
+    <div id = "second-cnt">
+    <div id = 'sec-title-cnt'>
+        <input type = "text" placeholder="Title" id ="text-field" 
+        style="border: transparent; height: 40px;outline: none;font-weight:550;background-color: transparent;"
+        [(ngModel)] = 'title'
+        >
+    </div>
+    <textarea style="border: transparent; height: 40px;outline: none;font-weight:550;background-color: transparent;" 
+    [(ngModel)] = 'desc' placeholder="Take a note"></textarea>
+    <div id = "icon-cnt">
+        <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon="collabrator-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="Note SVG icon" ></mat-icon>
+        <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <button (click) = "addNotes()" style = "border: transparent;font-weight: 520;font-size: 15px;">Close</button>
+    </div>
+    </div>
+   
+</ng-template>
+</div>
